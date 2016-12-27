@@ -1,0 +1,35 @@
+function Swap ( arrayname , i, j ) {
+
+	var temp;
+	
+	temp = arrayname[i];
+	arrayname[i ]= arrayname[j];
+	arrayname[j] = temp;
+}
+
+function PrintOutArray ( array ) {
+	// printout original order
+
+	for ( var i = 0; i < array.length; i++ ) {
+		console.log ( "i =  " + array[i] );
+	}
+}
+
+function BubbleSort ( array ) {
+	
+	for ( var i = 0; i < array.length - 1; i++ ) {
+		for ( var j = i+1; j < array.length; j++ )
+		{
+
+			if ( array[i] < array[j] ) {
+				Swap ( array, i, j );
+			}
+		} 
+	}
+	
+	return array;
+}
+
+var test1 = [1,2,3,4,5];
+
+BubbleSort ( test1 );
