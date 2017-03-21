@@ -38,8 +38,7 @@
 	
 	var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 3,
-	center: data[0],
-    //center: {lat: -26.06333, lng: 161.245},
+    center: {lat: -26.06333, lng: 161.245},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
   
@@ -55,12 +54,16 @@
   });
   
 	shipPath.setMap(map);
-		
+	//return data[0];
+	
+	
+//	var someMarker;
 	var title = "";
   
   for (var i = 0; i < data.length; i++) {
-    title = title + "waypoint_" + i;
+	
     var da = data[i];
+	title = "waypoint_" + (i+1)+"\n" + "lat: "+da["lat"]+"\n"+"long:"+da["lng"]+"\n";
     var marker = new google.maps.Marker({
       position: {lat: da["lat"], lng: da["lng"]},
       map: map,
@@ -72,9 +75,17 @@
           strokeWeight: 0.3	  
       },
 	  title:title
+    //  shape: shape,
+    //  title: beach[0],
+    //  zIndex: beach[3]
     });
+	title = "";
   }
+
   
+  
+  
+	overlay.setMap(map);
   }
   </script>
   <div id="map"></div>
