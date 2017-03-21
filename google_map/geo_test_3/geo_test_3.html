@@ -32,19 +32,18 @@
 			data=d.map(JSON.stringify).map(JSON.parse);
 		});
 	
-  
 
   function initMap (){
 	
+	conver_to_num(data);
+	
 	var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 3,
-    center: {lat: -26.06333, lng: 161.245},
+	center: data[0],
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
   
-	conver_to_num(data);
   
-
 	 var shipPath = new google.maps.Polyline({
     path: data,
     geodesic: true,
@@ -75,17 +74,10 @@
           strokeWeight: 0.3	  
       },
 	  title:title
-    //  shape: shape,
-    //  title: beach[0],
-    //  zIndex: beach[3]
     });
 	title = "";
   }
-
   
-  
-  
-	overlay.setMap(map);
   }
   </script>
   <div id="map"></div>
