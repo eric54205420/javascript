@@ -4,8 +4,8 @@
 	* 全局
 		* 預處理階段
 			* 在正式執行代碼前
-				* 1. 創建辭法環境 LexicalEnvironment
-				* 1. 處理數據綁定
+				 1. 創建辭法環境 LexicalEnvironment
+				 1. 處理數據綁定
 					* 用 [color=blue] 聲明方式 創建的函數
 					* 用 [color=blue] var 聲明的變量
 					* 將上述兩者綁定到 全局 LexicalEnvironment 中
