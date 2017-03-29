@@ -1,0 +1,26 @@
+<html>
+<body>
+<script type="text/javascript">
+	// 測試 函數聲名 與 函數表達式 調用時差異
+	f();					// 會正常打印結果	
+	console.log( g );		// variable hoist => "undefined"	
+	g();					// 全局 LexicalEnvironment 中
+							// "g" 是一個普通變量聲名
+							// 在此處(調用)時 尚未將函數表達式賦值給 g
+							// 產生 Typeerror
+							/* {
+									f: f 函數引用
+									g: undefined
+								} 
+							*/
+				
+	function f(){
+		console.log	( 'ff' );
+	}
+	
+	var g = function (){
+		console.log ( 'gg' );
+	}
+</script>
+</body>
+</html>
