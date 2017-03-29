@@ -1,0 +1,34 @@
+<html>
+<body>
+<script type="text/javascript">
+	// 測試 以 var 聲名變量 與 未使用 var 聲名變量
+	// 兩者差異
+	
+	console.log(a);			// variable hoist => undefined
+	console.log(b);			// 變量 b 變為一個 全局 ( window ) 屬性
+							// 產生 ReferenceError 
+							
+							/*
+								注意 此時全局 LexicalEnvironment 
+								
+								{
+									a: undefined
+								}
+								
+								而 b 成為一個全局 ( window ) 屬性
+								
+								## (1)LexicalEnvironment 可粗略視為 window 對象不加區分
+								## (2)於 ECMA-262 尚區分 LexicalEnvironment variableEnviron
+								## (3)有些文章使用 Execute Content
+								## 稱呼 LexicalEnvironment
+								
+								
+								
+							
+							*/
+	var a = 5;
+	b = 6;
+	
+</script>
+</body>
+</html>
