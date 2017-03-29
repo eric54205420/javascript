@@ -1,0 +1,17 @@
+<html>
+<body>
+<script type="text/javascript">
+	var a = 1;
+	
+	function test(){
+					// query the info of global variable a;
+					// will caurse "variable hoist" 
+		alert(a);
+		var a = 5;	// define a variable which has the same name
+					// with global variable 
+	}
+
+	test();
+</script>
+</body>
+</html>
