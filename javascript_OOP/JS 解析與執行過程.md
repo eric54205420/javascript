@@ -4,18 +4,19 @@
 	* 全局
 		* 預處理階段
 			* 在正式執行代碼前
-			(1) 創建辭法環境 LexicalEnvironment
-			(2)	處理數據綁定
-				* 用 聲明方式 創建的函數
-				* 用 var 聲明的變量
-				將上述兩者綁定到 全局 LexicalEnvironment 中
-			(3) ie
+				* 創建辭法環境 LexicalEnvironment
+				* 處理數據綁定
+					* 用 [color=blue] 聲明方式 創建的函數
+					* 用 [color=blue] var 聲明的變量
+					* 將上述兩者綁定到 全局 LexicalEnvironment 中
+			* ie
 			``` javascript
 				var a = 5;
 				var b;
 				var g = function (){};	// 用 函數表達式 定義者 不綁定
-										// 機制後述
-				c = 5;					// 同樣不綁定 		但會成為全局對象的屬性 後述						
+							// 機制後述
+				c = 5;			// 同樣不綁定
+							// 但會成為全局對象的屬性 後述						
 				function XXX(){
 				
 				}
@@ -24,6 +25,7 @@
 				{
 					a: 5
 					b: undefined
+					g: undefined
 					XXX : XXX 函數的引用
 				}
 			```
